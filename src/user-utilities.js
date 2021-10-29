@@ -24,7 +24,7 @@ function createUser(firstName, lastName, email, phoneNumber) {
 
     //returns user's orders
     function getOrders(){
-        
+        returns user.orders;
     }
 
     //adds order to user's orders {id: Number, productDescription: string, quantity: Number}
