@@ -3,55 +3,78 @@ const userUtilities = require('./user-utilities')
 
 //Test createUser returns a valid user
 function testCreateUserShouldReturnAValidUser(){
-    
-    let user = userUtilities.createUser("Jon", "Hinchley", "email@email.com","1234567890");
+    process.stdout.write('Running testCreateUserShouldReturnAValidUser -----> ')
+    let createUserResult = userUtilities.createUser("Jon", "Hinchley", "email@email.com","1234567890");
 
     //If it passes all our conditions, return passes    
     if ( 
-        user.firstName === "Jon" &&
-        user.lastName === "Hinchley" &&
-        user.email === "email@email.com" &&
-        user.phoneNumber === "1234567890"
+        createUserResult.user.firstName === "Jon" &&
+        createUserResult.user.lastName === "Hinchley" &&
+        createUserResult.user.email === "email@email.com" &&
+        createUserResult.user.phoneNumber === "1234567890"
     ){
-        return "Passes"
+        console.log('\x1b[32m%s\x1b[0m',"Passes")
     }
     //some condition failed return failed
     else {
-        return "Failed"
+        console.log('\x1b[31m%s\x1b[0m',"Failed")
     }
 }
 
 //Test getFormattedPhoneNumberShouldFormatNumber returns a valid user
 function testGetFormattedPhoneNumberShouldFormatNumber(){
-    
-    let user = userUtilities.createUser();
+    process.stdout.write('Running testGetFormattedPhoneNumberShouldFormatNumber -----> ')
+    let createUserResult = userUtilities.createUser();
     
     //If it passes all our conditions, return passes    
-    if ( user.getFormattedPhoneNumber() === "123-456-7890"){
-        return "Passes"
+    if ( createUserResult.user.getFormattedPhoneNumber() === "123-456-7890"){
+        console.log('\x1b[32m%s\x1b[0m',"Passes")
     }
     //some condition failed return failed
     else {
-        return "Failed"
+        console.log('\x1b[31m%s\x1b[0m',"Failed")
     }
 }
 
 //Test getFullName returns a formatted string
 function testGetFullName(){
-    
-    let user = userUtilities.createUser("Jon", "Hinchley", "email@email.com", "1234567890");
+    process.stdout.write('Running testGetFullName -----> ')
+    let createUserResult = userUtilities.createUser("Jon", "Hinchley", "email@email.com", "1234567890");
     
     //If it passes all our conditions, return passes    
-    if ( user.getFullName() === "Jon Hinchley"){
-        return "Passes"
+    if ( createUserResult.user.getFullName() === "Jon Hinchley"){
+        console.log('\x1b[32m%s\x1b[0m',"Passes")
     }
     //some condition failed return failed
     else {
-        return "Failed"
+        console.log('\x1b[31m%s\x1b[0m',"Failed")
+    }
+}
+
+//Test deleteOrder deletes the correct order
+function testDeleteOrder(){
+    process.stdout.write('Running testDeleteOrder -----> ')
+    let createUserResult = userUtilities.createUser("Jon", "Hinchley", "email@email.com", "1234567890");
+    
+    createUserResult.addOrder("McMuffin",4);
+    createUserResult.addOrder("Bacon McMuffin with Cheese", 7);
+    console.debug("orders", createUserResult.getOrders())
+    createUserResult.deleteOrder(0);
+    console.debug("orders", createUserResult.getOrders())
+
+    let orders = createUserResult.getOrders()
+    //If it passes all our conditions, return passes    
+    if ( orders[0].productDescription === "Bacon McMuffin with Cheese"){
+        console.log('\x1b[32m%s\x1b[0m',"Passes")
+    }
+    //some condition failed return failed
+    else {
+        console.log('\x1b[31m%s\x1b[0m',"Failed")
     }
 }
 
 //run all tests
-console.log('Running testCreateUserShouldReturnAValidUser ->',testCreateUserShouldReturnAValidUser())
-console.log('Running testGetFormattedPhoneNumberShouldFormatNumber ->', testGetFormattedPhoneNumberShouldFormatNumber())
-console.log('Running testGetFullName -> ', testGetFullName())
+testCreateUserShouldReturnAValidUser()
+testGetFormattedPhoneNumberShouldFormatNumber()
+testGetFullName()
+testDeleteOrder()
