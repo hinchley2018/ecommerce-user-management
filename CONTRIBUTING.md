@@ -2,6 +2,7 @@
 
 ## Behavior
 - Be respectful and follow community guidelines
+- Have a growth mindset and assume people have best intentions
 
 ## Branch naming
 - Create branch from `main` with `git checkout -b YOUR_BRANCH_NAME`
@@ -17,5 +18,12 @@
 ## Commits
 - Make meaningful commits, that describe your changes
 
-## PRs
+## Creating PRs
 - Add `jvannier` or `hinchley2018` as reviewer of your PR
+- Include links to the issue or work ticket you completed
+- Make a high level description of changes
+
+## Reviewing PRs
+- When reviewing, give constructive critism that makes code better
+- Follow behavior guidelines aka don't tear down people calling them names, critique their code not them
+- Feel free to make code suggestions in your comment using the "```" characters to start and end code blocks
