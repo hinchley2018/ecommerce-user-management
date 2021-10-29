@@ -7,7 +7,7 @@ function testCreateUserShouldReturnAValidUser(){
     let user = userUtilities.createUser("Jon", "Hinchley", "email@email.com","1234567890");
 
     //If it passes all our conditions, return passes    
-    if ( ){
+    if ( false){
         return "Passes"
     }
     else {//return failed
@@ -22,7 +22,7 @@ function testGetFormattedPhoneNumberShouldFormatNumber(){
     
     
     //If it passes all our conditions, return passes    
-    if ( true){
+    if ( false){
         return "Passes"
     }
     else {//return failed
@@ -32,3 +32,4 @@ function testGetFormattedPhoneNumberShouldFormatNumber(){
 
 //run all tests
 console.log('Running testCreateUserShouldReturnAValidUser ->',testCreateUserShouldReturnAValidUser())
+console.log('Running testGetFormattedPhoneNumberShouldFormatNumber ->', testGetFormattedPhoneNumberShouldFormatNumber())
