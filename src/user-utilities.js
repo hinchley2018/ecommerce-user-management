@@ -50,6 +50,20 @@ function createUser(firstName, lastName, email, phoneNumber) {
 
 }
 
+function   manageUsers(user, a) {
+  if ( a== "delete"){
+    return undefined
+} else {
+      if  (a != "delete" && a == "duplicate") {
+        return user;
+      } else {
+        if (a === "newName") {
+  user.name = "newName";
+        }
+      }
+    }
+}
+
 //in server-side programming, tells js which functions are available for use
 module.exports = {
     createUser
