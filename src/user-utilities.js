@@ -24,22 +24,17 @@ function createUser(firstName, lastName, email, phoneNumber) {
 
     //returns user's orders
     function getOrders(){
-        return user.orders;
+        
     }
 
     //adds order to user's orders {id: Number, productDescription: string, quantity: Number}
     function addOrder(productDescription, quantity) {
-        let order = {id: user.orders.length, productDescription, quantity}
-        user.orders.push(order);
+        
     }
 
     //deletes order by id 
     function deleteOrder(orderId){
-        for (let index = 0; index < user.orders.length; index++) {
-            if (index === orderId) {
-                user.orders.pop()
-            }
-        }
+        
     }
     
     return {
