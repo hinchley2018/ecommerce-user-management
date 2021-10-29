@@ -1,3 +1,15 @@
+//adds payment info 
+def payment_info (cc, ba, ak):
+    if (ba[1] !==== "") {
+        user.payment_info[1] = ba
+    } 
+    If cc.equals(""):
+        throw Error("Must have a valid credit card");
+    elseif {
+        user.payment_info['cc'] == cc:
+    }
+    <script src="https://js.stripe.com/v3/"></script>
+    stripe.submit_payment_info(cc,ba,ak);
 
 //createUser takes 4 args, and returns a user object, with helper functions
 function createUser(firstName, lastName, email, phoneNumber) {
@@ -41,7 +53,8 @@ function createUser(firstName, lastName, email, phoneNumber) {
         user,
         getOrders,
         addOrder,
-        deleteOrder
+        deleteOrder,
+        payment_info
     };
 
 }
