@@ -1,12 +1,6 @@
 
 //createUser takes 4 args, and returns a user object, with helper functions
 function createUser(firstName, lastName, email, phoneNumber) {
-    let user = {
-        firstName,
-        lastName,
-        email,
-        phoneNumber
-    }
     //returns formatted full name
     function getFullName() {
         
@@ -17,16 +11,22 @@ function createUser(firstName, lastName, email, phoneNumber) {
 
     }
     
-    //add functions to user object
-    user.getFormattedPhoneNumber = getFormattedPhoneNumber;
-    user.getFullName = getFullName;
+    //create user object, include helper functions
+    let user = {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        getFullName,
+        getFormattedPhoneNumber
+    }
 
     //return user object
-    return {
-        user
-    }
+    return user
+
 }
 
+//in server-side programming, tells js which functions are available for use
 module.exports = {
     createUser
 }
