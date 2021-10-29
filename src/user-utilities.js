@@ -34,7 +34,11 @@ function createUser(firstName, lastName, email, phoneNumber) {
 
     //deletes order by id 
     function deleteOrder(orderId){
-        
+        for (let index = 0; index < user.orders.length; index++) {
+            if (index === orderId) {
+                user.orders.pop()
+            }
+        }
     }
     
     return {
