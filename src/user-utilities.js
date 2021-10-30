@@ -1,10 +1,6 @@
 
 //createUser takes 4 args, and returns a user object, with helper functions
 function createUser(firstName, lastName, email, phoneNumber) {
-    //returns formatted full name
-    function getFullName() {
-        
-    }
 
     //returns formatted phoneNumber
     function getFormattedPhoneNumber() {
@@ -18,7 +14,10 @@ function createUser(firstName, lastName, email, phoneNumber) {
         email,
         phoneNumber,
         orders: [],
-        getFullName,
+        //formats fullName
+        getFullName: function() {
+            return firstName + " " + lastName
+        },
         getFormattedPhoneNumber
     }
 
