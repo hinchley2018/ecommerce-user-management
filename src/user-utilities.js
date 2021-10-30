@@ -8,8 +8,7 @@ function createUser(firstName, lastName, email, phoneNumber) {
 
     //returns formatted phoneNumber
     function getFormattedPhoneNumber() {
-        let p = phoneNumber;
-        return p.slice(0,3)+"-"+p.slice(0,6)+"-"+p.slice(6,11);
+        return phoneNumber.slice(0,3) + "-" + phoneNumber.slice(0,6) + "-" + phoneNumber.slice(6,11);
     }
     
     //create user object, include helper functions
