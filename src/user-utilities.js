@@ -29,7 +29,8 @@ function createUser(firstName, lastName, email, phoneNumber) {
 
     //adds order to user's orders {id: Number, productDescription: string, quantity: Number}
     function addOrder(productDescription, quantity) {
-        
+        let myOrder = {id: user.orders.length, productDescription, quantity}
+        user.orders.push(myOrder)
     }
 
     //deletes order by id 
