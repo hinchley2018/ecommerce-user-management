@@ -24,7 +24,7 @@ function testCreateUserShouldReturnAValidUser(){
 //Test getFormattedPhoneNumberShouldFormatNumber returns a valid user
 function testGetFormattedPhoneNumberShouldFormatNumber(){
     process.stdout.write('Running testGetFormattedPhoneNumberShouldFormatNumber -----> ')
-    let createUserResult = userUtilities.createUser();
+    let createUserResult = userUtilities.createUser("Jon", "User", "email@email.com","1234567890");
     
     //If it passes all our conditions, return passes    
     if ( createUserResult.user.getFormattedPhoneNumber() === "123-456-7890"){
